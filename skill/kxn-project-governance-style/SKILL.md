@@ -1,0 +1,220 @@
+---
+name: kxn-project-governance-style
+description: "Emulate a repository-derived project-governance style grounded in the kxn codex-remote-feishu evidence set: issue-as-contract, shared-model-first execution, staged delivery, maintainability as an active workstream, subtraction, risk governance, delivery governance, docs-and-tests boundary locking, and product-language governance. Use when the user wants a generic, reusable software execution style rather than repository-specific commands, pages, or protocol names. 用于按从 kxn 证据集中提炼出的项目治理风格推进软件工作：把 issue 当实施合同、先共享模型后表面入口、分阶段交付、把 maintainability 当持续工作流，并把风险、交付、文档测试和产品语言治理纳入主线；但输出必须保持通用，不绑定原项目专有名词。"
+---
+
+# KXN Project Governance Style
+
+这是一套从 `kxn/codex-remote-feishu` 全量证据中提炼出的通用项目治理风格。目标不是复制原仓库术语，而是复用这位作者的边界控制、推进节奏和治理偏好。
+
+## Quick Start
+
+适合直接用这类请求触发：
+
+- “按一种更强的项目治理风格来推进这个 feature，不要只是写代码。”
+- “帮我先把这个需求收敛成实施合同，再拆阶段。”
+- “这个需求容易 scope 漂移，你按 contract-first 的方式收口。”
+- “我想要一种会同时管风险、交付、文档测试和产品语言的开发方式。”
+
+## 最小输入契约
+
+这个 skill 的输入不是“一个待办标题”，而是一项真实软件工作及其上下文。最小输入应尽量包含：
+
+- 工作项或需求
+- 当前项目 / 代码上下文
+- 范围
+- 非目标
+- 已知风险、约束或历史包袱
+- 期望先输出什么
+
+如果上下文还不全，默认先帮用户补出最小实施合同，再进入阶段化推进。
+
+## 推荐输入模板
+
+```text
+用 $kxn-project-governance-style 推进这项工作。
+
+背景：
+...
+
+目标：
+...
+
+范围：
+...
+
+非目标：
+...
+
+当前代码位置 / 系统上下文：
+...
+
+已知风险 / 历史包袱 / 约束：
+...
+
+请先输出：
+1. 实施合同
+2. 分阶段计划
+3. 风险与回归检查点
+4. 如有必要，指出哪些旧路径应删除、收口或兼容
+```
+
+## 风格主轴
+
+### 1. 把 issue 当实施合同
+
+默认把 issue 写成带边界的实施合同，而不是待办便签：
+
+- 背景
+- 目标
+- 范围
+- 非目标
+- 完成标准
+- 验证方式
+
+### 2. 先统一共享模型，再铺用户入口
+
+当工作跨多个入口、状态或交付面时，先统一：
+
+- source of truth
+- shared definition
+- compatibility boundary
+- state or contract model
+
+再让用户可见入口从它派生。
+
+### 3. 分阶段推进，并在阶段间复评
+
+复杂变更默认拆成三段：
+
+1. baseline or shared model
+2. primary path
+3. hardening, compatibility, and delivery closure
+
+每阶段前重新判断最佳切面，不把最初方案当固定答案。
+
+### 4. 把 maintainability 当持续工作流
+
+这套风格不会把维护性工作降级成“有空再整理”。遇到这些迹象时，默认把它单独入账：
+
+- 大文件失控
+- 共享逻辑散落
+- 用户可见行为需要保持不变，但结构已经不可维护
+- 页面、命令面或交付面需要先拆 helpers、模块或过渡层
+
+### 5. 持续做减法，而不是只做加法
+
+持续做减法：
+
+- 删除旧入口
+- 收回重复定义
+- 收口历史脚本或临时兼容路径
+- 减少内部概念泄漏
+
+### 6. 把风险和失败语义放进主线
+
+把这些边界放进主线设计：
+
+- stale or replayed actions
+- overload and degraded semantics
+- fallback and recovery
+- upgrade, rollback, and migration risk
+
+### 7. 把交付系统当作产品基础设施治理
+
+把这些都视作工程本体，而不是外围事务：
+
+- install
+- upgrade
+- rollback
+- release planning
+- readiness gates
+- entrypoint binding
+
+### 8. 用文档和测试锁边界
+
+文档负责说明当前边界，测试负责锁住关键行为。遇到这些变更时，默认同步补齐：
+
+- 大型重构
+- 状态模型重做
+- 风险治理
+- 交付路径重构
+- 入口统一
+
+### 9. 治理产品语言与信息架构
+
+不仅管理实现，也管理用户看到的系统：
+
+- 收敛内部术语
+- 让默认入口围绕任务而不是实现细节
+- 区分稳态工作、首次配置和低频维护
+- 统一信息架构与用户叙事
+
+## 实际执行方式
+
+### 面对新工作时
+
+优先按这个顺序判断：
+
+1. 先定义问题、目标、范围、非目标
+2. 先决定 source of truth
+3. 先决定哪些旧路径必须收回
+4. 再接主链路和用户入口
+5. 最后收口风险语义、恢复路径、文档、测试和发布影响
+
+### 写计划时
+
+默认把计划写成三层：
+
+1. baseline or shared model
+2. primary path
+3. hardening, maintainability, and delivery closure
+
+如果问题本身带有明显的结构债，`maintainability` 不要藏进“顺手整理”，而要显式入计划。
+
+### 评审方案时
+
+优先警惕：
+
+- 多入口各自维护定义
+- 只改表面 UI，不改真相源
+- 只加新路径，不删旧路径
+- 风险语义留到最后
+- 文档和测试不跟进
+- 用户看到的术语和分区仍然围绕内部实现
+
+## When Not To Use Or Lightweight Mode
+
+以下情况不必上完整重治理流程：
+
+- 局部且已定位的一次性修补
+- 不涉及共享模型、交付路径、用户入口或风险边界的纯小改
+- 只需要修一个明显缺陷，不需要三阶段推进
+
+这类轻量任务至少保留三件事：
+
+1. 一句边界说明
+2. 一句非目标
+3. 一句风险或回归检查
+
+## 转译规则
+
+- 保留治理动作，不保留案例专名。
+- 把实现细节翻译成治理类别，如“共享定义”“入口绑定模型”“统一兜底访问路径”“计划驱动的发版闸门”。
+- 如果遮掉仓库名以后这份 skill 不成立，说明抽象还不够。
+
+## Guardrails
+
+- 不要把这套风格误解成“写很多文档”。
+- 不要把这套风格退化成“只会重构，不会交付”。
+- 不要把 `maintainability` 降级成隐形副产物。
+- 不要只模仿 issue 结构，而忽略删旧路径、做交付治理、做失败语义。
+- 不要把原项目的专有实现直接复制到新项目。
+
+## References
+
+- Read `references/style-pillars.md` for the distilled pillars and promotion notes.
+- Read `references/operating-rhythm.md` for the working cadence and anti-patterns.
+- Read `references/adaptation-rules.md` for translation rules.
+- Read `references/evidence-index.md` for the high-level evidence map.
+- Read `references/evidence-matrix.md` for issue -> commit -> code/doc/test anchors.
