@@ -10,18 +10,19 @@
 - 把 maintainability 当持续工作流
 - 把风险、交付、文档测试和产品语言治理纳入主线
 
-## 这个 skill 从哪里来
+## 这组发布物的关系
 
-这个 skill 不是手工随意总结出来的，它来自两个上游来源：
+这个 skill 不是手工随意总结出来的，它来自一组彼此衔接的发布物：
 
 - 风格生成器：[`repo-style-skill-builder`](https://github.com/RichardCao/repo-style-skill-builder)
+- 示例结果：[`kxn-project-governance-style`](https://github.com/RichardCao/kxn-project-governance-style)
 - 证据来源仓库：[`kxn/codex-remote-feishu`](https://github.com/kxn/codex-remote-feishu)
 
-也就是说，这个仓库里的 skill 是基于 `kxn/codex-remote-feishu` 的 issues、commits、代码、测试和文档证据抽象出来的发布结果。
+也就是说，这个仓库里的 skill 是由 `repo-style-skill-builder` 基于 `kxn/codex-remote-feishu` 的 issues、commits、代码、测试和文档证据抽象出来的发布结果。
 
 ## 仓库结构
 
-这个发布仓库把 repo 级文档放在根目录，把真正的 skill payload 放在 `skill/` 下面。这样仓库可以有 README 和 LICENSE，同时不污染 skill 本体目录。
+这个发布仓库把 repo 级文档放在根目录，把真正的 skill payload 放在 `skill/` 下面。这样仓库可以有 README，同时不污染 skill 本体目录。
 
 ```text
 kxn-project-governance-style/

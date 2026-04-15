@@ -1,4 +1,4 @@
 interface:
-  display_name: "KXN Governance Style"
-  short_description: "Generic governance style distilled from kxn"
-  default_prompt: "Use $kxn-project-governance-style to run this software change in a contract-first, staged, maintainability-aware, risk-aware, delivery-aware governance style. Ask for or infer the minimum input contract: background, scope, non-goals, project context, and known risks."
+  display_name: "KXN 治理风格"
+  short_description: "从 kxn 提炼出的通用治理风格"
+  default_prompt: "使用 $kxn-project-governance-style 以 contract-first、分阶段、maintainability-aware、风险感知、交付感知的方式推进这项软件工作。先要求或补齐最小输入契约：背景、范围、非目标、项目上下文和已知风险。"

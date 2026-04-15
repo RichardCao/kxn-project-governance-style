@@ -1,13 +1,13 @@
 ---
 name: kxn-project-governance-style
-description: "Emulate a repository-derived project-governance style grounded in the kxn codex-remote-feishu evidence set: issue-as-contract, shared-model-first execution, staged delivery, maintainability as an active workstream, subtraction, risk governance, delivery governance, docs-and-tests boundary locking, and product-language governance. Use when the user wants a generic, reusable software execution style rather than repository-specific commands, pages, or protocol names. 用于按从 kxn 证据集中提炼出的项目治理风格推进软件工作：把 issue 当实施合同、先共享模型后表面入口、分阶段交付、把 maintainability 当持续工作流，并把风险、交付、文档测试和产品语言治理纳入主线；但输出必须保持通用，不绑定原项目专有名词。"
+description: "用于按从 kxn 证据集中提炼出的项目治理风格推进软件工作：把 issue 当实施合同、先共享模型后表面入口、分阶段交付、把 maintainability 当持续工作流，并把风险、交付、文档测试和产品语言治理纳入主线；但输出必须保持通用，不绑定原项目专有名词。适用于用户想要一套可复用的软件执行风格，而不是原项目的具体命令、页面或协议名。"
 ---
 
-# KXN Project Governance Style
+# KXN 项目治理风格
 
 这是一套从 `kxn/codex-remote-feishu` 全量证据中提炼出的通用项目治理风格。目标不是复制原仓库术语，而是复用这位作者的边界控制、推进节奏和治理偏好。
 
-## Quick Start
+## 快速触发
 
 适合直接用这类请求触发：
 
@@ -76,10 +76,10 @@ description: "Emulate a repository-derived project-governance style grounded in 
 
 当工作跨多个入口、状态或交付面时，先统一：
 
-- source of truth
-- shared definition
-- compatibility boundary
-- state or contract model
+- source of truth（单一真相源）
+- shared definition（共享定义）
+- compatibility boundary（兼容性边界）
+- state 或 contract model
 
 再让用户可见入口从它派生。
 
@@ -87,9 +87,9 @@ description: "Emulate a repository-derived project-governance style grounded in 
 
 复杂变更默认拆成三段：
 
-1. baseline or shared model
-2. primary path
-3. hardening, compatibility, and delivery closure
+1. baseline 或 shared model
+2. 主路径
+3. hardening、兼容性收口与交付收口
 
 每阶段前重新判断最佳切面，不把最初方案当固定答案。
 
@@ -166,9 +166,9 @@ description: "Emulate a repository-derived project-governance style grounded in 
 
 默认把计划写成三层：
 
-1. baseline or shared model
-2. primary path
-3. hardening, maintainability, and delivery closure
+1. baseline 或 shared model
+2. 主路径
+3. hardening、maintainability 与交付收口
 
 如果问题本身带有明显的结构债，`maintainability` 不要藏进“顺手整理”，而要显式入计划。
 
@@ -183,7 +183,7 @@ description: "Emulate a repository-derived project-governance style grounded in 
 - 文档和测试不跟进
 - 用户看到的术语和分区仍然围绕内部实现
 
-## When Not To Use Or Lightweight Mode
+## 不适用场景与轻量模式
 
 以下情况不必上完整重治理流程：
 
@@ -203,7 +203,7 @@ description: "Emulate a repository-derived project-governance style grounded in 
 - 把实现细节翻译成治理类别，如“共享定义”“入口绑定模型”“统一兜底访问路径”“计划驱动的发版闸门”。
 - 如果遮掉仓库名以后这份 skill 不成立，说明抽象还不够。
 
-## Guardrails
+## 约束
 
 - 不要把这套风格误解成“写很多文档”。
 - 不要把这套风格退化成“只会重构，不会交付”。
@@ -211,10 +211,10 @@ description: "Emulate a repository-derived project-governance style grounded in 
 - 不要只模仿 issue 结构，而忽略删旧路径、做交付治理、做失败语义。
 - 不要把原项目的专有实现直接复制到新项目。
 
-## References
+## 参考材料
 
-- Read `references/style-pillars.md` for the distilled pillars and promotion notes.
-- Read `references/operating-rhythm.md` for the working cadence and anti-patterns.
-- Read `references/adaptation-rules.md` for translation rules.
-- Read `references/evidence-index.md` for the high-level evidence map.
-- Read `references/evidence-matrix.md` for issue -> commit -> code/doc/test anchors.
+- 读取 `references/style-pillars.md` 看风格主轴与主轴升格说明。
+- 读取 `references/operating-rhythm.md` 看典型推进节奏与反模式。
+- 读取 `references/adaptation-rules.md` 看转译规则。
+- 读取 `references/evidence-index.md` 看高层证据地图。
+- 读取 `references/evidence-matrix.md` 看 issue -> commit -> code/doc/test 证据链。
